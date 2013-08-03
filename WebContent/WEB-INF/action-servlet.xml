@@ -20,7 +20,6 @@
 		</property>
 	</bean>
 	<!--action -->
-
 	<bean id="testActionDo" class="com.ms.action.TestAction" autowire="default">
 		<property name="methodNameResolver" ref="methodNameResolver" />
 		<property name="baseService" ref="baseService" />
@@ -29,9 +28,7 @@
 	<bean id="baseService" class="com.ms.service.BaseService">
 		<property name="sessionFacotry" ref="sessionFactory" />
 	</bean>
-
-	<bean id="expectionResolver" class=" com.ms.common.exception.ExpectionResolver" />
-
+	
 	<!--url mapping -->
 	<bean id="simpleUrlHandlerMapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
