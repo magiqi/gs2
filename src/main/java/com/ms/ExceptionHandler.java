@@ -8,11 +8,11 @@ import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 public class ExceptionHandler extends SimpleMappingExceptionResolver {
 
-	@Override
-	protected ModelAndView doResolveException(HttpServletRequest arg0,
-			HttpServletResponse arg1, Object arg2, Exception arg3) {
-	 
-		return super.doResolveException(arg0, arg1, arg2, arg3);
-	}
+    @Override
+    protected ModelAndView doResolveException(HttpServletRequest arg0,
+	    HttpServletResponse arg1, Object arg2, Exception arg3) {
+
+	return super.doResolveException(arg0, arg1, arg2, arg3);
+    }
 
 }
