@@ -13,6 +13,7 @@
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
 	<bean id="methodNameResolver"
 		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
 		<property name="paramName">
@@ -20,18 +21,12 @@
 		</property>
 	</bean>
 	<!--action -->
-	<bean id="testActionDo" class="com.ms.action.TestAction" autowire="default">
+	<bean id="testActionDo" class="com.ms.action.TestAction" >
 		<property name="methodNameResolver" ref="methodNameResolver" />
-		<property name="baseService" ref="baseService" />
 	</bean>
-
-	<bean id="baseService" class="com.ms.service.BaseService">
-		<property name="sessionFacotry" ref="sessionFactory" />
-	</bean>
-	
 	<!--url mapping -->
 	<bean id="simpleUrlHandlerMapping"
-		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" >
 		<property name="mappings">
 			<props>
 				<prop key="/test.do">testActionDo</prop>
@@ -42,5 +37,4 @@
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="defaultErrorView" value="common/error" />
 	</bean>
-
 </beans>

@@ -3,6 +3,7 @@ package com.ms.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
@@ -14,32 +15,33 @@ import com.ms.service.BaseService;
  * @author magi.qi
  * 
  */
+ 
 public class TestAction extends MultiActionController {
-
-	public ModelAndView test(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		TestBean testBean = new TestBean();
-		testBean.setName("hh不啊");
-		try {
-
-			this.baseService.save(testBean);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		response.getWriter().write("haha");
-		return null;
+   
+     public ModelAndView test(HttpServletRequest request,
+	    HttpServletResponse response) throws Exception {
+	TestBean testBean = new TestBean();
+	testBean.setName("hh不啊");
+	try {
+	    this.baseService.save(testBean);
+	} catch (Exception e) {
+	    e.printStackTrace();
 	}
+	response.getWriter().write("haha");
+	return null;
+    }
 
-	/**
-	 * 基础bean
-	 */
-	private BaseService baseService;
+    /**
+     * 基础bean
+     */
+    @Autowired
+    private BaseService baseService;
 
-	public BaseService getBaseService() {
-		return baseService;
-	}
+    public BaseService getBaseService() {
+	return baseService;
+    }
 
-	public void setBaseService(BaseService baseService) {
-		this.baseService = baseService;
-	}
+    public void setBaseService(BaseService baseService) {
+	this.baseService = baseService;
+    }
 }

@@ -29,6 +29,6 @@
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<import resource="hibernate.xml"/>
-	<import resource="action-servlet.xml"/>
+	<import resource="hibernate.xml" />
+	<import resource="action-servlet.xml" />
 </beans>
